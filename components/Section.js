@@ -1,4 +1,5 @@
 import { Button, Card } from "react-daisyui";
+import ReadMore from "@components/ReadMore";
 export default function Section({ category, items, addToCart }) {
   return (
     <section className="flex flex-col items-center py-5 w-full" id={category}>
@@ -20,7 +21,9 @@ export default function Section({ category, items, addToCart }) {
             />
             <Card.Body>
               <Card.Title tag="h2">{item.title}</Card.Title>
-              <p className=" break-words max-w-[30ch]">{item.description}</p>
+              <div className=" break-words max-w-[30ch]">
+                <ReadMore>{item.description}</ReadMore>
+              </div>
               <span className="text-4xl text-fuchsia-400">${item.price}</span>
               <Card.Actions className="justify-end">
                 <Button
