@@ -15,7 +15,7 @@
     "daisyui": "^2.39.1",
     "framer-motion": "^7.6.6",
     "next": "13.0.3",
-    "next-api-og-image": "^4.3.0",
+    "next-api-og-image": "1.0.0",
     "next-transpile-modules": "^10.0.0",
     "postcss": "^8.4.19",
     "puppeteer": "1.6.2",
