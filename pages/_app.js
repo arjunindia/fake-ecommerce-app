@@ -23,10 +23,18 @@ function MyApp({ Component, pageProps }) {
     setCost(cost + price);
   }
   const [defTheme, setTheme] = useState("default");
+  const [avatar, setAvatar] = useState("");
   const [theme, _] = useLocalStorage("theme", "default");
   useEffect(() => {
     setTheme(theme);
   }, [theme]);
+  useEffect(() => {
+    fetch("https://api.escuelajs.co/api/v1/users?offset=0&limit=1")
+      .then((res) => res.json())
+      .then((data) => {
+        setAvatar(data[0].avatar);
+      });
+  }, []);
 
   return (
     <>
@@ -90,15 +98,17 @@ function MyApp({ Component, pageProps }) {
               <Dropdown vertical="end">
                 <Button color="ghost" className="avatar" shape="circle">
                   <div className="w-10 rounded-full">
-                    <img src="https://api.lorem.space/image/face?hash=33791" />
+                    <img src={avatar} alt="Profile Icon" />
                   </div>
                 </Button>
                 <Dropdown.Menu className="w-52 menu-compact">
                   <li>
-                    <a className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </a>
+                    <Link href={"/profile"} passHref legacyBehavior>
+                      <a className="justify-between">
+                        Profile
+                        <span className="badge">New</span>
+                      </a>
+                    </Link>
                   </li>
                   <Link href={"/settings"} passHref legacyBehavior>
                     <Dropdown.Item>Settings</Dropdown.Item>
