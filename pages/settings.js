@@ -40,10 +40,6 @@ export default function Settings({ h }) {
       <Head>
         <title>Settings</title>
         {/* <link rel="icon" href="/favicon.ico" /> */}
-        <meta
-          property="og:image"
-          content="https://fake-ecommerce-app.vercel.app/api/og-image?name=Fake-Ecommerce-App&stage=Settings"
-        />
       </Head>
       <main className="flex flex-col  w-1/2 mx-auto">
         <h4 className=" text-2xl my-10">Current Theme: {theme}</h4>

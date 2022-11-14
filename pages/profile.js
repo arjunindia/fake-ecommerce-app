@@ -13,10 +13,6 @@ export default function Profile({ data }) {
       <Head>
         <title>Profile</title>
         {/* <link rel="icon" href="/favicon.ico" /> */}
-        <meta
-          property="og:image"
-          content="https://fake-ecommerce-app.vercel.app/api/og-image?name=Fake-Ecommerce-App&stage=Profile"
-        />
       </Head>
       <main>
         <Card className="py-10">
